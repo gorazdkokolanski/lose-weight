@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>mockup page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- MOBILE MENU -->
+    <div class="mobile-menu">
+        <div class="menu-wrapper">
+            <!-- Close Button (X) -->
+            <div class="close-menu">
+                <img src="img/x.svg" alt="Close Menu">
+            </div>
+
+            <!-- Main Menu Container -->
+            <div class="menu-main active">
+                <ul class="menu-list">
+                    <!-- Each submenu item carries a data attribute so we know which submenu to open -->
+                    <li class="has-submenu" data-submenu="terms">
+                        <span class="menu-link">Terms &amp; Policies</span>
+                        <span class="arrow">&#x2192;</span>
+                    </li>
+                    <li class="has-submenu" data-submenu="categories">
+                        <span class="menu-link">My Account</span>
+                        <span class="arrow">&#x2192;</span>
+                    </li>
+                    <li><a href="#">Support</a></li>
+                    <li><a href="#">Reviews</a></li>
+                    <li><a href="#">About Us</a></li>
+                </ul>
+            </div>
+
+            <!-- Submenu Container for Terms & Policies -->
+            <div class="submenu-container" data-submenu="terms">
+                <div class="submenu-header">
+                    <span class="back-arrow">&#x2190;</span>
+                    <span class="submenu-title">Terms &amp; Policies</span>
+                </div>
+                <ul class="submenu-list">
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of service</a></li>
+                    <li><a href="#">Refund Policy</a></li>
+                    <li><a href="#">Subscription Terms</a></li>
+                    <li><a href="#">Cookie Policy</a></li>
+                    <li><a href="#">Do Not Sell My Personal Information</a></li>
+                </ul>
+            </div>
+
+            <!-- Submenu Container for Categories -->
+            <div class="submenu-container" data-submenu="categories">
+                <div class="submenu-header">
+                    <span class="back-arrow">&#x2190;</span>
+                    <span class="submenu-title">My Account</span>
+                </div>
+                <ul class="submenu-list">
+                    <li><a href="#">My subscription</a></li>
+                    <li><a href="#">My program</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- OVERLAY -->
+    <div class="overlay"></div>
+
+    <!-- HEADER -->
+    
+    <header style="background-color: #121212;">
+        <div class="container header-container">
+            <div class="left-header">
+                <img src="img/logo.svg" alt="Logo">
+            </div>
+            <div class="right-header">
+                <div class="burger">
+                    <img src="img/burger.svg" alt="Menu">
+                </div>
+            </div>
+        </div>
+
+        <div class="container progress-container">
+            <a href="">
+                <img src="img/angle.png" alt="angle">
+            </a>
+
+            <div class="progress-bar">
+                <div class="actual-progress-bar"></div>
+            </div>
+
+            <div class="progress-number">1/31</div>
+        </div>
+    </header>
+
+    <section class="section-with-progress">
+    <!-- MAIN CONTENT -->
+        <div class="small-container bodytype-container">
+            <h2>Choose your body type</h2>
+
+            <div class="options-diets">
+                <input type="radio" name="one" id="one">
+                <label for="one">
+                    <div class="actual-radio">
+                        <div></div>
+                    </div>
+                    <div class="radio-text">
+                        <span>Vegetarian 🍤</span>
+                        <span>Excludes meat</span>
+                    </div>
+                </label>
+
+                <input type="radio" name="one" id="two">
+                <label for="two">
+                    <div class="actual-radio">
+                        <div></div>
+                    </div>
+                    <div class="radio-text">
+                        <span>Vegetarian 🍤</span>
+                        <span>Excludes meat</span>
+                    </div>
+                </label>
+
+                <input type="radio" name="one" id="three">
+                <label for="three">
+                    <div class="actual-radio">
+                        <div></div>
+                    </div>
+                    <div class="radio-text">
+                        <span>Vegetarian 🍤</span>
+                        <span>Excludes meat</span>
+                    </div>
+                </label>
+
+                <input type="radio" name="one" id="four">
+                <label for="four">
+                    <div class="actual-radio">
+                        <div></div>
+                    </div>
+                    <div class="radio-text">
+                        <span>Vegetarian 🍤</span>
+                        <span>Excludes meat</span>
+                    </div>
+                </label>
+
+                <input type="radio" name="one" id="five">
+                <label for="five">
+                    <div class="actual-radio">
+                        <div></div>
+                    </div>
+                    <div class="radio-text">
+                        <span>Vegetarian 🍤</span>
+                    </div>
+                </label>
+            </div>
+        </div>
+    </section>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        /**********************
+         * MENU & OVERLAY
+         **********************/
+        const burger = document.querySelector('.burger');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const overlay = document.querySelector('.overlay');
+        const closeBtn = document.querySelector('.close-menu');
+        const menuMain = document.querySelector('.menu-main');
+
+        // Open and close functions for the mobile menu & overlay
+        function openMenu() {
+            mobileMenu.classList.add('active');
+            overlay.classList.add('active');
+            // Show main menu and hide any active submenus
+            menuMain.classList.add('active');
+            document.querySelectorAll('.submenu-container').forEach(sm => sm.classList.remove('active'));
+        }
+        function closeMenu() {
+            mobileMenu.classList.remove('active');
+            overlay.classList.remove('active');
+        }
+        burger.addEventListener('click', openMenu);
+        closeBtn.addEventListener('click', closeMenu);
+        overlay.addEventListener('click', closeMenu);
+
+        /**********************
+         * SUBMENU HANDLING
+         **********************/
+        // Add event listeners for all main menu items that have submenus
+        document.querySelectorAll('.menu-list .has-submenu').forEach(item => {
+            item.addEventListener('click', () => {
+                const submenuId = item.getAttribute('data-submenu');
+                menuMain.classList.remove('active');
+                // Hide any other submenu containers
+                document.querySelectorAll('.submenu-container').forEach(submenu => {
+                    submenu.classList.remove('active');
+                });
+                // Show the submenu container corresponding to the clicked item
+                const targetSubmenu = document.querySelector(`.submenu-container[data-submenu="${submenuId}"]`);
+                if (targetSubmenu) {
+                    targetSubmenu.classList.add('active');
+                }
+            });
+        });
+        // Handle back arrow in each submenu container to return to main menu
+        document.querySelectorAll('.submenu-container .back-arrow').forEach(back => {
+            back.addEventListener('click', () => {
+                // Hide the current submenu container and show the main menu
+                back.closest('.submenu-container').classList.remove('active');
+                menuMain.classList.add('active');
+            });
+        });
+
+    </script>
+</body>
+
+</html>
