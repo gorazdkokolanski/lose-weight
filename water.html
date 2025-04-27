@@ -70,11 +70,11 @@
     <div class="overlay"></div>
 
     <!-- HEADER -->
-    
+
     <header style="background-color: #121212;">
         <div class="container header-container">
             <div class="left-header">
-                <img src="img/logo.svg" alt="Logo">
+                <img src="https://stealthkits.net/ppc/vpn_wizard/img/logo.PNG" alt="Logo">
             </div>
             <div class="right-header">
                 <div class="burger">
@@ -92,24 +92,25 @@
                 <div class="actual-progress-bar"></div>
             </div>
 
-            <div class="progress-number">1/31</div>
+            <div class="progress-number">4/8</div>
         </div>
     </header>
 
     <section class="section-with-progress">
-    <!-- MAIN CONTENT -->
+        <!-- MAIN CONTENT -->
         <div class="small-container bodytype-container">
-            <h2>Choose your body type</h2>
+            <h2>Choose where your service provider is located</h2>
 
             <div class="options-diets">
+
                 <input type="radio" name="one" id="one">
                 <label for="one">
                     <div class="actual-radio">
                         <div></div>
                     </div>
                     <div class="radio-text">
-                        <span>Vegetarian 🍤</span>
-                        <span>Excludes meat</span>
+                        <span>Outside Five-Eyes</span>
+                        <span>(Good for most users)</span>
                     </div>
                 </label>
 
@@ -119,21 +120,12 @@
                         <div></div>
                     </div>
                     <div class="radio-text">
-                        <span>Vegetarian 🍤</span>
-                        <span>Excludes meat</span>
+                        <span>Outside Fourteen-Eyes</span>
+                        <span>(e.g.Offshore, Switzerland, Panama, Malaysia)</span>
                     </div>
+                    <div class="recommended">RECOMMENDED</div>
                 </label>
 
-                <input type="radio" name="one" id="three">
-                <label for="three">
-                    <div class="actual-radio">
-                        <div></div>
-                    </div>
-                    <div class="radio-text">
-                        <span>Vegetarian 🍤</span>
-                        <span>Excludes meat</span>
-                    </div>
-                </label>
 
                 <input type="radio" name="one" id="four">
                 <label for="four">
@@ -141,9 +133,10 @@
                         <div></div>
                     </div>
                     <div class="radio-text">
-                        <span>Vegetarian 🍤</span>
-                        <span>Excludes meat</span>
+                        <span>Decentralized </span>
+                        <span>(Peer-to-peer on blockchain)</span>
                     </div>
+                    <!--<div class="recommended">MAXIMUM PRIVACY</div>-->
                 </label>
 
                 <input type="radio" name="one" id="five">
@@ -152,10 +145,128 @@
                         <div></div>
                     </div>
                     <div class="radio-text">
-                        <span>Vegetarian 🍤</span>
+                        <span>No preference</span>
+                        <span>(not recommended)</span>
                     </div>
                 </label>
+
             </div>
+
+
+            <div class="popup-water">
+                <div class="popup-water-box">
+                    <span><b>POPUP 1:</b>
+                        Five-Eyes - the core group (US, UK, Canada, Australia, New Zealand) with the tightest
+                        data-sharing pact. Five Eyes countries have extensive surveillance programs, making VPNs based
+                        there (e.g., PIA) less ideal for privacy, that’s why choosing one outside their reach is
+                        critical. </span>
+                </div>
+            </div>
+
+
+            <div class="popup-water">
+                <div class="popup-water-box">
+                    <span><b>POPUP 2:</b>
+                        Fourteen-Eyes - refers to a group of 14 countries that share intelligence data. (US, UK, CA, AU,
+                        NZ, DE, FR, NL, IT, ES, SE, BE, DK, NO) cooperate to monitor communications,
+                        which impact privacy. For VPN users, a provider based in a Fourteen Eyes country may face legal
+                        pressure to share user data unless that employe safeguard measures.</span>
+                </div>
+            </div>
+
+            <div class="popup-water">
+                <div class="popup-water-box">
+                    <span><b>POPUP 3:</b>
+                        Decentralized - doesn’t use central servers owned by one company. Instead, it routes your
+                        internet traffic through a network of (other users’ computers) around the world. Think of it
+                        like borrowing Wi-Fi from many people instead of
+                        one provider. This makes it harder for governments or hackers to get a hold of your user logs,
+                        as there’s no single point to target. </span>
+                </div>
+            </div>
+
+            <style>
+                label:has(.recommended) {
+                    position: relative;
+                }
+
+                .recommended {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    height: 16px;
+                    background-color: #FF6025;
+                    width: 131px;
+                    color: #fff;
+                    font-size: 12px;
+                    padding: 5px;
+                    font-weight: 700;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+            </style>
+
+
+            <style>
+                .popup-water-box {
+                    background-color: #0056B7;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 15px;
+                    padding: 15px 0;
+                    align-items: center;
+                }
+
+                .popup-water-box>* {
+                    width: 90%;
+                }
+
+                .popup-water-box>div {
+                    font-size: 16px;
+                    font-weight: 700;
+                }
+
+                .popup-water-box>span {
+                    font-size: 15px;
+                    font-weight: 400;
+                }
+
+                .popup-water>div:nth-child(2) {
+                    font-size: 12px;
+                }
+            </style>
+
+            <style>
+                .a-div {
+                    width: 100%;
+                    display: flex;
+                    justify-content: flex-end;
+                }
+
+                .a-div>a {
+                    width: 164px;
+                    height: 56px;
+                    display: flex;
+                    justify-content: space-between;
+                    background-color: #FF6025;
+                    align-items: center;
+                    font-size: 18px;
+                }
+
+                .a-div>a>img {
+                    height: 23px;
+                }
+
+                .a-div>a>div:nth-child(1) {
+                    margin-left: 15px;
+                    font-weight: 600;
+                }
+
+                .a-div>a>img:nth-child(2) {
+                    margin-right: 15px;
+                }
+            </style>
 
             <div class="a-div">
                 <a href="" class="disabled">
@@ -165,6 +276,11 @@
             </div>
         </div>
     </section>
+
+
+
+
+
 
     <!-- JAVASCRIPT -->
     <script>
@@ -221,22 +337,27 @@
             });
         });
 
-        const radios = document.querySelectorAll('input[name="one"]');
-    const continueBtn = document.querySelector('.a-div a');
 
-    function updateContinueState() {
-      // if any radio is checked → remove disabled, else add it back
-      const isChecked = Array.from(radios).some(r => r.checked);
-      continueBtn.classList.toggle('disabled', !isChecked);
-    }
 
-    // listen for changes
-    radios.forEach(radio => {
-      radio.addEventListener('change', updateContinueState);
+
+        // on radio select, show the matching popup and the continue button
+const radios      = document.querySelectorAll('.options-diets input[type="radio"]');
+const popups      = document.querySelectorAll('.popup-water');
+const continueDiv = document.querySelector('.a-div');
+
+radios.forEach((radio, idx) => {
+  radio.addEventListener('change', () => {
+    // show only the popup that matches the radio index
+    popups.forEach((popup, pIdx) => {
+      popup.style.display = (pIdx === idx) ? 'flex' : 'none';
     });
+    // show Continue button
+    continueDiv.style.display = 'flex';
+    // optionally enable the <a> if you have a "disabled" class
+    continueDiv.querySelector('a').classList.remove('disabled');
+  });
+});
 
-    // set initial state on load
-    updateContinueState();
 
     </script>
 </body>

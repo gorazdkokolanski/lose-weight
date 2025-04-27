@@ -70,8 +70,7 @@
     <div class="overlay"></div>
 
     <!-- HEADER -->
-    
-    <header style="background-color: #121212;">
+    <header>
         <div class="container header-container">
             <div class="left-header">
                 <img src="img/logo.svg" alt="Logo">
@@ -96,78 +95,65 @@
         </div>
     </header>
 
-    <section class="section-with-progress">
     <!-- MAIN CONTENT -->
-        <div class="small-container bodytype-container">
-            <h2>Choose your body type</h2>
+    <section id="additional-goals">
 
-            <div class="options-diets">
-                <input type="radio" name="one" id="one">
-                <label for="one">
-                    <div class="actual-radio">
-                        <div></div>
-                    </div>
-                    <div class="radio-text">
-                        <span>Vegetarian 🍤</span>
-                        <span>Excludes meat</span>
-                    </div>
-                </label>
+        <div class="small-container additional-goals-container device-name-container">
 
-                <input type="radio" name="one" id="two">
-                <label for="two">
-                    <div class="actual-radio">
-                        <div></div>
-                    </div>
-                    <div class="radio-text">
-                        <span>Vegetarian 🍤</span>
-                        <span>Excludes meat</span>
-                    </div>
-                </label>
+            <h2>What device are you using?</h2>
 
-                <input type="radio" name="one" id="three">
-                <label for="three">
-                    <div class="actual-radio">
-                        <div></div>
-                    </div>
-                    <div class="radio-text">
-                        <span>Vegetarian 🍤</span>
-                        <span>Excludes meat</span>
-                    </div>
-                </label>
+            <input type="text" placeholder="Device Name">
 
-                <input type="radio" name="one" id="four">
-                <label for="four">
-                    <div class="actual-radio">
-                        <div></div>
-                    </div>
-                    <div class="radio-text">
-                        <span>Vegetarian 🍤</span>
-                        <span>Excludes meat</span>
-                    </div>
-                </label>
-
-                <input type="radio" name="one" id="five">
-                <label for="five">
-                    <div class="actual-radio">
-                        <div></div>
-                    </div>
-                    <div class="radio-text">
-                        <span>Vegetarian 🍤</span>
-                    </div>
-                </label>
+            <div class="input-warning">
+                <div>
+                    <div>Your BMI is 28.41, considered Slightly Overweight</div>
+                    <span>
+                        <img src="img/info.png" alt="info">
+                    </span>
+                </div>
+                <div>We'll use this information to customize your plan to your needs.</div>
             </div>
 
             <div class="a-div">
-                <a href="" class="disabled">
+                <a class="disabled" href="">
                     <div>Continue</div>
                     <img src="img/arrow-regular.png" alt="arrow">
                 </a>
             </div>
+
         </div>
+
     </section>
 
     <!-- JAVASCRIPT -->
     <script>
+
+        const inputs = document.querySelectorAll('input[type="checkbox"][name="checkboxes"]');
+        const labels = document.querySelectorAll('label[for^="c-"]');
+        const continueButton = document.querySelector('.a-div a');
+
+        inputs.forEach((input, index) => {
+            input.addEventListener('change', () => {
+                const label = labels[index];
+                const onSVG = label.querySelector('.checkbox-on');
+                const offSVG = label.querySelector('.checkbox-off');
+
+                if (input.checked) {
+                    onSVG.style.display = 'block';
+                    offSVG.style.display = 'none';
+                } else {
+                    onSVG.style.display = 'none';
+                    offSVG.style.display = 'block';
+                }
+
+                const atLeastOneChecked = Array.from(inputs).some(cb => cb.checked);
+                continueButton.classList.toggle('disabled', !atLeastOneChecked);
+                continueButton.style.pointerEvents = atLeastOneChecked ? 'auto' : 'none';
+                continueButton.style.opacity = atLeastOneChecked ? '1' : '0.5';
+            });
+        });
+
+
         /**********************
          * MENU & OVERLAY
          **********************/
@@ -221,22 +207,23 @@
             });
         });
 
-        const radios = document.querySelectorAll('input[name="one"]');
-    const continueBtn = document.querySelector('.a-div a');
+        const deviceInput   = document.querySelector('.device-name-container input[type="text"]');
+const continueLink  = document.querySelector('.a-div a');
+const warningBox    = document.querySelector('.input-warning');
 
-    function updateContinueState() {
-      // if any radio is checked → remove disabled, else add it back
-      const isChecked = Array.from(radios).some(r => r.checked);
-      continueBtn.classList.toggle('disabled', !isChecked);
-    }
+function updateContinue() {
+  const hasText = deviceInput.value.trim().length > 0;
+  // toggle Continue button
+  continueLink.classList.toggle('disabled', !hasText);
+  // show warning only once they start typing
+  warningBox.style.display = hasText ? 'flex' : 'none';
+}
 
-    // listen for changes
-    radios.forEach(radio => {
-      radio.addEventListener('change', updateContinueState);
-    });
+// wire it up
+deviceInput.addEventListener('input', updateContinue);
+// initial state
+updateContinue();
 
-    // set initial state on load
-    updateContinueState();
 
     </script>
 </body>

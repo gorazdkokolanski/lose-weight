@@ -70,7 +70,7 @@
     <div class="overlay"></div>
 
     <!-- HEADER -->
-    
+
     <header style="background-color: #121212;">
         <div class="container header-container">
             <div class="left-header">
@@ -97,68 +97,67 @@
     </header>
 
     <section class="section-with-progress">
-    <!-- MAIN CONTENT -->
-        <div class="small-container bodytype-container">
-            <h2>Choose your body type</h2>
+        <!-- MAIN CONTENT -->
+        <div class="small-container bodytype-container level-container">
+            <h2>Your fitness level is<br><span>Intermediate</span></h2>
 
-            <div class="options-diets">
-                <input type="radio" name="one" id="one">
-                <label for="one">
-                    <div class="actual-radio">
-                        <div></div>
-                    </div>
-                    <div class="radio-text">
-                        <span>Vegetarian 🍤</span>
-                        <span>Excludes meat</span>
-                    </div>
-                </label>
+            <div class="level-box">
+                <div>
+                    <h3>46</h3>
+                    <span>total score</span>
+                </div>
 
-                <input type="radio" name="one" id="two">
-                <label for="two">
-                    <div class="actual-radio">
-                        <div></div>
-                    </div>
-                    <div class="radio-text">
-                        <span>Vegetarian 🍤</span>
-                        <span>Excludes meat</span>
-                    </div>
-                </label>
+                <p>
+                    You will get a personalized workout plan designed to challenge and enhance your strength, endurance,
+                    and overall performance.
+                </p>
 
-                <input type="radio" name="one" id="three">
-                <label for="three">
-                    <div class="actual-radio">
-                        <div></div>
-                    </div>
-                    <div class="radio-text">
-                        <span>Vegetarian 🍤</span>
-                        <span>Excludes meat</span>
-                    </div>
-                </label>
+                <div class="levels">
+                    <div class="level">
+                        <div>
+                            <span>GREAT FOR A START!</span>
+                            <div class="level-progress-line">
+                                <div class="level-actual-line"></div>
+                            </div>
+                        </div>
 
-                <input type="radio" name="one" id="four">
-                <label for="four">
-                    <div class="actual-radio">
-                        <div></div>
+                        <div>
+                            Score: <span>16/30</span>
+                        </div>
                     </div>
-                    <div class="radio-text">
-                        <span>Vegetarian 🍤</span>
-                        <span>Excludes meat</span>
-                    </div>
-                </label>
 
-                <input type="radio" name="one" id="five">
-                <label for="five">
-                    <div class="actual-radio">
-                        <div></div>
+                    <div class="level">
+                        <div>
+                            <span>Strength</span>
+                            <div class="level-progress-line">
+                                <div class="level-actual-line"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            Score: <span>22/30</span>
+                        </div>
                     </div>
-                    <div class="radio-text">
-                        <span>Vegetarian 🍤</span>
+
+                    <div class="level">
+                        <div>
+                            <span>Stamina</span>
+                            <div class="level-progress-line">
+                                <div class="level-actual-line"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            Score: <span>18/30</span>
+                        </div>
                     </div>
-                </label>
+                </div>
+
+                <div class="level-box-abs">Great for a start!</div>
             </div>
 
             <div class="a-div">
-                <a href="" class="disabled">
+                <a href="">
                     <div>Continue</div>
                     <img src="img/arrow-regular.png" alt="arrow">
                 </a>
@@ -221,22 +220,6 @@
             });
         });
 
-        const radios = document.querySelectorAll('input[name="one"]');
-    const continueBtn = document.querySelector('.a-div a');
-
-    function updateContinueState() {
-      // if any radio is checked → remove disabled, else add it back
-      const isChecked = Array.from(radios).some(r => r.checked);
-      continueBtn.classList.toggle('disabled', !isChecked);
-    }
-
-    // listen for changes
-    radios.forEach(radio => {
-      radio.addEventListener('change', updateContinueState);
-    });
-
-    // set initial state on load
-    updateContinueState();
 
     </script>
 </body>

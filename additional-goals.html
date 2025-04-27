@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>mockup page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- MOBILE MENU -->
+    <div class="mobile-menu">
+        <div class="menu-wrapper">
+            <!-- Close Button (X) -->
+            <div class="close-menu">
+                <img src="img/x.svg" alt="Close Menu">
+            </div>
+
+            <!-- Main Menu Container -->
+            <div class="menu-main active">
+                <ul class="menu-list">
+                    <!-- Each submenu item carries a data attribute so we know which submenu to open -->
+                    <li class="has-submenu" data-submenu="terms">
+                        <span class="menu-link">Terms &amp; Policies</span>
+                        <span class="arrow">&#x2192;</span>
+                    </li>
+                    <li class="has-submenu" data-submenu="categories">
+                        <span class="menu-link">My Account</span>
+                        <span class="arrow">&#x2192;</span>
+                    </li>
+                    <li><a href="#">Support</a></li>
+                    <li><a href="#">Reviews</a></li>
+                    <li><a href="#">About Us</a></li>
+                </ul>
+            </div>
+
+            <!-- Submenu Container for Terms & Policies -->
+            <div class="submenu-container" data-submenu="terms">
+                <div class="submenu-header">
+                    <span class="back-arrow">&#x2190;</span>
+                    <span class="submenu-title">Terms &amp; Policies</span>
+                </div>
+                <ul class="submenu-list">
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of service</a></li>
+                    <li><a href="#">Refund Policy</a></li>
+                    <li><a href="#">Subscription Terms</a></li>
+                    <li><a href="#">Cookie Policy</a></li>
+                    <li><a href="#">Do Not Sell My Personal Information</a></li>
+                </ul>
+            </div>
+
+            <!-- Submenu Container for Categories -->
+            <div class="submenu-container" data-submenu="categories">
+                <div class="submenu-header">
+                    <span class="back-arrow">&#x2190;</span>
+                    <span class="submenu-title">My Account</span>
+                </div>
+                <ul class="submenu-list">
+                    <li><a href="#">My subscription</a></li>
+                    <li><a href="#">My program</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- OVERLAY -->
+    <div class="overlay"></div>
+
+    <!-- HEADER -->
+    <header>
+        <div class="container header-container">
+            <div class="left-header">
+                <img src="img/logo.svg" alt="Logo">
+            </div>
+            <div class="right-header">
+                <div class="burger">
+                    <img src="img/burger.svg" alt="Menu">
+                </div>
+            </div>
+        </div>
+
+        <div class="container progress-container">
+            <a href="">
+                <img src="img/angle.png" alt="angle">
+            </a>
+
+            <div class="progress-bar">
+                <div class="actual-progress-bar"></div>
+            </div>
+
+            <div class="progress-number">1/31</div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <section id="additional-goals">
+
+        <div class="small-container additional-goals-container">
+
+            <h2>What motivates you to exercise?</h2>
+
+            <div class="checkboxes-div">
+                <div class="checkbox-div">
+                    <input type="checkbox" name="checkboxes" id="c-1">
+                    <label for="c-1">
+                        <div>
+                            <svg class="checkbox-off" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                    <path stroke="currentColor" stroke-width="2" d="M3 3h18v18H3z"></path>
+                                </svg>
+                            </svg>
+                            <svg class="checkbox-on" style="display: none;" width="24" height="24" fill="none"
+                                viewBox="0 0 24 24">
+                                <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                    <path fill="currentColor" fill-rule="evenodd"
+                                        d="M22.707 4.707 12 15.414l-3.707-3.707 1.414-1.414L12 12.586l9.293-9.293z"
+                                        clip-rule="evenodd"></path>
+                                    <path fill="currentColor" fill-rule="evenodd" d="M2 2h15v2H4v16h16v-9.421h2V22H2z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                            </svg>
+                        </div>
+
+                        <div>Improving health</div>
+                    </label>
+                </div>
+
+                <div class="checkbox-div">
+                    <input type="checkbox" name="checkboxes" id="c-2">
+                    <label for="c-2">
+                        <div>
+                            <svg class="checkbox-off" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                    <path stroke="currentColor" stroke-width="2" d="M3 3h18v18H3z"></path>
+                                </svg>
+                            </svg>
+                            <svg class="checkbox-on" style="display: none;" width="24" height="24" fill="none"
+                                viewBox="0 0 24 24">
+                                <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                    <path fill="currentColor" fill-rule="evenodd"
+                                        d="M22.707 4.707 12 15.414l-3.707-3.707 1.414-1.414L12 12.586l9.293-9.293z"
+                                        clip-rule="evenodd"></path>
+                                    <path fill="currentColor" fill-rule="evenodd" d="M2 2h15v2H4v16h16v-9.421h2V22H2z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                            </svg>
+                        </div>
+
+                        <div>Boosting immune system</div>
+                    </label>
+                </div>
+
+                <div class="checkbox-div">
+                    <input type="checkbox" name="checkboxes" id="c-3">
+                    <label for="c-3">
+                        <div>
+                            <svg class="checkbox-off" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                    <path stroke="currentColor" stroke-width="2" d="M3 3h18v18H3z"></path>
+                                </svg>
+                            </svg>
+                            <svg class="checkbox-on" style="display: none;" width="24" height="24" fill="none"
+                                viewBox="0 0 24 24">
+                                <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                    <path fill="currentColor" fill-rule="evenodd"
+                                        d="M22.707 4.707 12 15.414l-3.707-3.707 1.414-1.414L12 12.586l9.293-9.293z"
+                                        clip-rule="evenodd"></path>
+                                    <path fill="currentColor" fill-rule="evenodd" d="M2 2h15v2H4v16h16v-9.421h2V22H2z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                            </svg>
+                        </div>
+
+                        <div>Looking better</div>
+                    </label>
+                </div>
+
+                <div class="checkbox-div">
+                    <input type="checkbox" name="checkboxes" id="c-4">
+                    <label for="c-4">
+                        <div>
+                            <svg class="checkbox-off" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                    <path stroke="currentColor" stroke-width="2" d="M3 3h18v18H3z"></path>
+                                </svg>
+                            </svg>
+                            <svg class="checkbox-on" style="display: none;" width="24" height="24" fill="none"
+                                viewBox="0 0 24 24">
+                                <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                    <path fill="currentColor" fill-rule="evenodd"
+                                        d="M22.707 4.707 12 15.414l-3.707-3.707 1.414-1.414L12 12.586l9.293-9.293z"
+                                        clip-rule="evenodd"></path>
+                                    <path fill="currentColor" fill-rule="evenodd" d="M2 2h15v2H4v16h16v-9.421h2V22H2z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                            </svg>
+                        </div>
+
+                        <div>Building strength and endurance</div>
+                    </label>
+                </div>
+
+                <div class="checkbox-div">
+                    <input type="checkbox" name="checkboxes" id="c-5">
+                    <label for="c-5">
+                        <div>
+                            <svg class="checkbox-off" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                    <path stroke="currentColor" stroke-width="2" d="M3 3h18v18H3z"></path>
+                                </svg>
+                            </svg>
+                            <svg class="checkbox-on" style="display: none;" width="24" height="24" fill="none"
+                                viewBox="0 0 24 24">
+                                <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                    <path fill="currentColor" fill-rule="evenodd"
+                                        d="M22.707 4.707 12 15.414l-3.707-3.707 1.414-1.414L12 12.586l9.293-9.293z"
+                                        clip-rule="evenodd"></path>
+                                    <path fill="currentColor" fill-rule="evenodd" d="M2 2h15v2H4v16h16v-9.421h2V22H2z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                            </svg>
+                        </div>
+
+                        <div>Boosting libido</div>
+                    </label>
+                </div>
+            </div>
+
+            <div class="a-div">
+                <a href="">
+                    <div>Continue</div>
+                    <img src="img/arrow-regular.png" alt="arrow">
+                </a>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- JAVASCRIPT -->
+    <script>
+
+  const inputs = document.querySelectorAll('input[type="checkbox"][name="checkboxes"]');
+  const labels = document.querySelectorAll('label[for^="c-"]');
+  const continueButton = document.querySelector('.a-div a');
+
+  inputs.forEach((input, index) => {
+    input.addEventListener('change', () => {
+      const label = labels[index];
+      const onSVG = label.querySelector('.checkbox-on');
+      const offSVG = label.querySelector('.checkbox-off');
+
+      if (input.checked) {
+        onSVG.style.display = 'block';
+        offSVG.style.display = 'none';
+      } else {
+        onSVG.style.display = 'none';
+        offSVG.style.display = 'block';
+      }
+
+      const atLeastOneChecked = Array.from(inputs).some(cb => cb.checked);
+      continueButton.classList.toggle('disabled', !atLeastOneChecked);
+      continueButton.style.pointerEvents = atLeastOneChecked ? 'auto' : 'none';
+      continueButton.style.opacity = atLeastOneChecked ? '1' : '0.5';
+    });
+  });
+
+
+        /**********************
+         * MENU & OVERLAY
+         **********************/
+        const burger = document.querySelector('.burger');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const overlay = document.querySelector('.overlay');
+        const closeBtn = document.querySelector('.close-menu');
+        const menuMain = document.querySelector('.menu-main');
+
+        // Open and close functions for the mobile menu & overlay
+        function openMenu() {
+            mobileMenu.classList.add('active');
+            overlay.classList.add('active');
+            // Show main menu and hide any active submenus
+            menuMain.classList.add('active');
+            document.querySelectorAll('.submenu-container').forEach(sm => sm.classList.remove('active'));
+        }
+        function closeMenu() {
+            mobileMenu.classList.remove('active');
+            overlay.classList.remove('active');
+        }
+        burger.addEventListener('click', openMenu);
+        closeBtn.addEventListener('click', closeMenu);
+        overlay.addEventListener('click', closeMenu);
+
+        /**********************
+         * SUBMENU HANDLING
+         **********************/
+        // Add event listeners for all main menu items that have submenus
+        document.querySelectorAll('.menu-list .has-submenu').forEach(item => {
+            item.addEventListener('click', () => {
+                const submenuId = item.getAttribute('data-submenu');
+                menuMain.classList.remove('active');
+                // Hide any other submenu containers
+                document.querySelectorAll('.submenu-container').forEach(submenu => {
+                    submenu.classList.remove('active');
+                });
+                // Show the submenu container corresponding to the clicked item
+                const targetSubmenu = document.querySelector(`.submenu-container[data-submenu="${submenuId}"]`);
+                if (targetSubmenu) {
+                    targetSubmenu.classList.add('active');
+                }
+            });
+        });
+        // Handle back arrow in each submenu container to return to main menu
+        document.querySelectorAll('.submenu-container .back-arrow').forEach(back => {
+            back.addEventListener('click', () => {
+                // Hide the current submenu container and show the main menu
+                back.closest('.submenu-container').classList.remove('active');
+                menuMain.classList.add('active');
+            });
+        });
+
+        /**********************
+         * CHECKBOX TOGGLE
+         **********************/
+        // For each checkbox, toggle between the off and on SVGs when clicked
+        document.querySelectorAll('.checkbox').forEach(checkbox => {
+            checkbox.addEventListener('click', () => {
+                const offSVG = checkbox.querySelector('.checkbox-off');
+                const onSVG = checkbox.querySelector('.checkbox-on');
+                if (offSVG.style.display === "none") {
+                    offSVG.style.display = "block";
+                    onSVG.style.display = "none";
+                } else {
+                    offSVG.style.display = "none";
+                    onSVG.style.display = "block";
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>mockup page</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </head>
 
 <body>
@@ -70,8 +72,7 @@
     <div class="overlay"></div>
 
     <!-- HEADER -->
-    
-    <header style="background-color: #121212;">
+    <header>
         <div class="container header-container">
             <div class="left-header">
                 <img src="img/logo.svg" alt="Logo">
@@ -96,74 +97,105 @@
         </div>
     </header>
 
-    <section class="section-with-progress">
     <!-- MAIN CONTENT -->
-        <div class="small-container bodytype-container">
-            <h2>Choose your body type</h2>
+    <section id="additional-goals">
 
-            <div class="options-diets">
-                <input type="radio" name="one" id="one">
-                <label for="one">
-                    <div class="actual-radio">
-                        <div></div>
-                    </div>
-                    <div class="radio-text">
-                        <span>Vegetarian 🍤</span>
-                        <span>Excludes meat</span>
-                    </div>
-                </label>
+        <div class="small-container additional-goals-container loader-container">
 
-                <input type="radio" name="one" id="two">
-                <label for="two">
-                    <div class="actual-radio">
-                        <div></div>
-                    </div>
-                    <div class="radio-text">
-                        <span>Vegetarian 🍤</span>
-                        <span>Excludes meat</span>
-                    </div>
-                </label>
+            <div class="actual-loader">
+                <svg viewBox="0 0 120 120">
+                  <!-- background circle -->
+                  <circle class="bg" cx="60" cy="60" r="54"/>
+                  <!-- moving arc -->
+                  <circle class="progress" cx="60" cy="60" r="54"
+                    stroke-dasharray="339.292" stroke-dashoffset="339.292"/>
+                </svg>
+                <div class="loader-number">0%</div>
+              </div>
 
-                <input type="radio" name="one" id="three">
-                <label for="three">
-                    <div class="actual-radio">
-                        <div></div>
-                    </div>
-                    <div class="radio-text">
-                        <span>Vegetarian 🍤</span>
-                        <span>Excludes meat</span>
-                    </div>
-                </label>
+            <div class="changing-text-1">Text1</div>
+            <div class="changing-text-2">Text2</div>
+            <div class="changing-text-3">Text3</div>
+            <div class="changing-text-4">Text4</div>
 
-                <input type="radio" name="one" id="four">
-                <label for="four">
-                    <div class="actual-radio">
-                        <div></div>
-                    </div>
-                    <div class="radio-text">
-                        <span>Vegetarian 🍤</span>
-                        <span>Excludes meat</span>
-                    </div>
-                </label>
+            <h4>67 million men</h4>
 
-                <input type="radio" name="one" id="five">
-                <label for="five">
-                    <div class="actual-radio">
-                        <div></div>
+            <span>have chosen MadMuscles</span>
+
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide review">
+                        <div class="review-top">
+                            <div>
+                                <img src="img/2-1.webp" alt="review-person">
+                                <div>Robert Matthews</div>
+                            </div>
+
+                            <div class="stars">
+                                <img src="img/stars.png" alt="stars">
+                            </div>
+                        </div>
+
+                        <div class="review-bottom">
+                            It's a great way to get into shape. should have done it a long time ago 😃
+                        </div>
                     </div>
-                    <div class="radio-text">
-                        <span>Vegetarian 🍤</span>
+
+                    <div class="swiper-slide review">
+                        <div class="review-top">
+                            <div>
+                                <img src="img/2-1.webp" alt="review-person">
+                                <div>Robert Matthews</div>
+                            </div>
+
+                            <div class="stars">
+                                <img src="img/stars.png" alt="stars">
+                            </div>
+                        </div>
+
+                        <div class="review-bottom">
+                            It's a great way to get into shape. should have done it a long time ago 😃
+                        </div>
                     </div>
-                </label>
+
+                    <div class="swiper-slide review">
+                        <div class="review-top">
+                            <div>
+                                <img src="img/2-1.webp" alt="review-person">
+                                <div>Robert Matthews</div>
+                            </div>
+
+                            <div class="stars">
+                                <img src="img/stars.png" alt="stars">
+                            </div>
+                        </div>
+
+                        <div class="review-bottom">
+                            It's a great way to get into shape. should have done it a long time ago 😃
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide review">
+                        <div class="review-top">
+                            <div>
+                                <img src="img/2-1.webp" alt="review-person">
+                                <div>Robert Matthews</div>
+                            </div>
+
+                            <div class="stars">
+                                <img src="img/stars.png" alt="stars">
+                            </div>
+                        </div>
+
+                        <div class="review-bottom">
+                            It's a great way to get into shape. should have done it a long time ago 😃
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <div class="a-div">
-                <a href="" class="disabled">
-                    <div>Continue</div>
-                    <img src="img/arrow-regular.png" alt="arrow">
-                </a>
-            </div>
         </div>
+
     </section>
 
     <!-- JAVASCRIPT -->
@@ -221,24 +253,57 @@
             });
         });
 
-        const radios = document.querySelectorAll('input[name="one"]');
-    const continueBtn = document.querySelector('.a-div a');
+        const swiper = new Swiper('.swiper', {
+            direction: 'horizontal',
+            loop: true,
+            spaceBetween: 80,
+        });
 
-    function updateContinueState() {
-      // if any radio is checked → remove disabled, else add it back
-      const isChecked = Array.from(radios).some(r => r.checked);
-      continueBtn.classList.toggle('disabled', !isChecked);
-    }
-
-    // listen for changes
-    radios.forEach(radio => {
-      radio.addEventListener('change', updateContinueState);
-    });
-
-    // set initial state on load
-    updateContinueState();
 
     </script>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const circle = document.querySelector('.actual-loader .progress');
+      const number = document.querySelector('.loader-number');
+      const texts = [
+        document.querySelector('.changing-text-1'),
+        document.querySelector('.changing-text-2'),
+        document.querySelector('.changing-text-3'),
+        document.querySelector('.changing-text-4')
+      ];
+      const radius = circle.r.baseVal.value;
+      const circumference = 2 * Math.PI * radius;
+      circle.style.strokeDasharray = circumference;
+
+      function setProgress(pct) {
+        const offset = circumference - (pct / 100) * circumference;
+        circle.style.strokeDashoffset = offset;
+        number.textContent = pct + '%';
+        // show only the current text block
+        texts.forEach((el, i) => {
+          // 0→25, 26→50, 51→75, 76→100
+          const start = i * 25 + (i>0?1:0);
+          const end = (i + 1) * 25;
+          el.style.display = (pct >= start && pct <= end) ? 'block' : 'none';
+        });
+      }
+
+      let pct = 0;
+      const timer = setInterval(() => {
+        pct++;
+        if (pct <= 100) {
+          setProgress(pct);
+        } else {
+          clearInterval(timer);
+          // when done, redirect:
+          window.location.href = 'email.html';
+        }
+      }, 50);
+    });
+  </script>
+
 </body>
 
 </html>
