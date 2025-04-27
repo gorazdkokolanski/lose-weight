@@ -429,7 +429,7 @@ header {
 }
 
 .actual-radio {
-    margin-top: 20px;
+    margin-top: 30px;
     margin-left: 15px;
     display: flex;
     align-items: center;
@@ -452,7 +452,7 @@ header {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    margin-top: 20px;
+    margin-top: 30px;
     margin-bottom: 20px;
 }
 
@@ -1335,6 +1335,10 @@ header {
         margin-top: 0;
         padding: 0 10px;
         font-size: 14px;
+    }
+
+    .popup-water-box{
+        margin-bottom: 60px;
     }
 
 }
