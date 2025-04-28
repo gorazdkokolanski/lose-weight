@@ -288,79 +288,89 @@
 
     <!-- JAVASCRIPT -->
     <script>
-        /**********************
-         * MENU & OVERLAY
-         **********************/
-        const burger = document.querySelector('.burger');
-        const mobileMenu = document.querySelector('.mobile-menu');
-        const overlay = document.querySelector('.overlay');
-        const closeBtn = document.querySelector('.close-menu');
-        const menuMain = document.querySelector('.menu-main');
+        /***********************
+ * MENU & OVERLAY
+ ***********************/
+const burger = document.querySelector('.burger');
+const mobileMenu = document.querySelector('.mobile-menu');
+const overlay = document.querySelector('.overlay');
+const closeBtn = document.querySelector('.close-menu');
+const menuMain = document.querySelector('.menu-main');
 
-        // Open and close functions for the mobile menu & overlay
-        function openMenu() {
-            mobileMenu.classList.add('active');
-            overlay.classList.add('active');
-            // Show main menu and hide any active submenus
-            menuMain.classList.add('active');
-            document.querySelectorAll('.submenu-container').forEach(sm => sm.classList.remove('active'));
-        }
-        function closeMenu() {
-            mobileMenu.classList.remove('active');
-            overlay.classList.remove('active');
-        }
-        burger.addEventListener('click', openMenu);
-        closeBtn.addEventListener('click', closeMenu);
-        overlay.addEventListener('click', closeMenu);
+// Open and close functions for the mobile menu & overlay
+function openMenu() {
+    mobileMenu.classList.add('active');
+    overlay.classList.add('active');
+    // Show main menu and hide any active submenus
+    menuMain.classList.add('active');
+    document.querySelectorAll('.submenu-container').forEach(sm => sm.classList.remove('active'));
+}
 
-        /**********************
-         * SUBMENU HANDLING
-         **********************/
-        // Add event listeners for all main menu items that have submenus
-        document.querySelectorAll('.menu-list .has-submenu').forEach(item => {
-            item.addEventListener('click', () => {
-                const submenuId = item.getAttribute('data-submenu');
-                menuMain.classList.remove('active');
-                // Hide any other submenu containers
-                document.querySelectorAll('.submenu-container').forEach(submenu => {
-                    submenu.classList.remove('active');
-                });
-                // Show the submenu container corresponding to the clicked item
-                const targetSubmenu = document.querySelector(`.submenu-container[data-submenu="${submenuId}"]`);
-                if (targetSubmenu) {
-                    targetSubmenu.classList.add('active');
-                }
-            });
+function closeMenu() {
+    mobileMenu.classList.remove('active');
+    overlay.classList.remove('active');
+}
+
+burger.addEventListener('click', openMenu);
+closeBtn.addEventListener('click', closeMenu);
+overlay.addEventListener('click', closeMenu);
+
+/***********************
+ * SUBMENU HANDLING
+ ***********************/
+// Add event listeners for all main menu items that have submenus
+document.querySelectorAll('.menu-list .has-submenu').forEach(item => {
+    item.addEventListener('click', () => {
+        const submenuId = item.getAttribute('data-submenu');
+        menuMain.classList.remove('active');
+        // Hide any other submenu containers
+        document.querySelectorAll('.submenu-container').forEach(submenu => {
+            submenu.classList.remove('active');
         });
-        // Handle back arrow in each submenu container to return to main menu
-        document.querySelectorAll('.submenu-container .back-arrow').forEach(back => {
-            back.addEventListener('click', () => {
-                // Hide the current submenu container and show the main menu
-                back.closest('.submenu-container').classList.remove('active');
-                menuMain.classList.add('active');
-            });
-        });
+        // Show the submenu container corresponding to the clicked item
+        const targetSubmenu = document.querySelector(`.submenu-container[data-submenu="${submenuId}"]`);
+        if (targetSubmenu) {
+            targetSubmenu.classList.add('active');
+        }
+    });
+});
+// Handle back arrow in each submenu container to return to main menu
+document.querySelectorAll('.submenu-container .back-arrow').forEach(back => {
+    back.addEventListener('click', () => {
+        // Hide the current submenu container and show the main menu
+        back.closest('.submenu-container').classList.remove('active');
+        menuMain.classList.add('active');
+    });
+});
 
-
-
-
-        // on radio select, show the matching popup and the continue button
-const radios      = document.querySelectorAll('.options-diets input[type="radio"]');
-const popups      = document.querySelectorAll('.popup-water');
+/***********************
+ * SCROLLING ON MOBILE
+ ***********************/
+const radios = document.querySelectorAll('.options-diets input[type="radio"]');
+const popups = document.querySelectorAll('.popup-water');
 const continueDiv = document.querySelector('.a-div');
 
 radios.forEach((radio, idx) => {
-  radio.addEventListener('change', () => {
-    // show only the popup that matches the radio index
-    popups.forEach((popup, pIdx) => {
-      popup.style.display = (pIdx === idx) ? 'flex' : 'none';
+    radio.addEventListener('change', () => {
+        // Show only the popup that matches the radio index
+        popups.forEach((popup, pIdx) => {
+            popup.style.display = (pIdx === idx) ? 'flex' : 'none';
+        });
+        // Show Continue button
+        continueDiv.style.display = 'flex';
+        // Optionally enable the <a> if you have a "disabled" class
+        continueDiv.querySelector('a').classList.remove('disabled');
+
+        // Scroll to the visible popup only on mobile devices (less than 1024px)
+        if (window.innerWidth < 1024) {
+            const popupToShow = document.querySelectorAll('.popup-water')[idx];
+            if (popupToShow) {
+                popupToShow.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        }
     });
-    // show Continue button
-    continueDiv.style.display = 'flex';
-    // optionally enable the <a> if you have a "disabled" class
-    continueDiv.querySelector('a').classList.remove('disabled');
-  });
 });
+
 
 
     </script>
